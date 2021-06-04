@@ -16,9 +16,6 @@ public class Panel extends javax.swing.JFrame {
 
     //El contador se ocupara como medida general para mover/rotar/trasladar el cuadrado
     int Escalado = 0, Rotacion=0, Traslacion=0, UpAndDown=0, contador =15;
-    int X=200,Y=130;
-    int Size = 100;
-    int Grados=72;
     
     int L1X1,L1X2,L1Y1,L1Y2; //Linea 1
     int L2X1,L2X2,L2Y1,L2Y2; //Linea 2
@@ -271,6 +268,8 @@ public class Panel extends javax.swing.JFrame {
             //Con esto se pinta el panel principal
         pencil.fillRect(0, 0, 500, 500);
         
+        //Se le resta valores a los puntos de cada coordenada para simular una disminucion en el escalado
+        
         L1Y1+=20;L1Y2+=20;L1X2-=20;
         L2Y1+=20;
         L3X2-=20;
@@ -493,66 +492,27 @@ public class Panel extends javax.swing.JFrame {
                 L4X1=300;L4X2=300;L4Y1=130;L4Y2=230; //Linea 4    
                 break;
             case -1: 
-                L1X1=200;L1X2=300;L1Y1=130;L1Y2=130; //Linea 1
-                L2X1=200;L2X2=200;L2Y1=130;L2Y2=230; //Linea 2
-                L3X1=200;L3X2=300;L3Y1=230;L3Y2=230; //Linea 3
-                L4X1=300;L4X2=300;L4Y1=130;L4Y2=230; //Linea 4
-                
-                L1X1+=5;L1X2+=20;L1Y1-=15;L1Y2-=20; //Linea 1
-                L2X2-=5;L2Y1-=15;L2Y2-=15; //Linea 2
-                L3X2+=15;L3Y1-=15;L3Y2-=20; //Linea 3
-                L4X1+=20;L4X2+=15;L4Y1-=15;L4Y2-=15; //Linea 4
+                L1X1+=35;L1X2-=0;L1Y1+=25;L1Y2+=20; //Linea 1
+                L2X1+=35;L2X2+=10;L2Y1+=25;L2Y2+=0; //Linea 2
+                L3X1+=10;L3X2-=25;L3Y1-=0;L3Y2+=5; //Linea 3
+                L4X1+=0;L4X2-=25;L4Y1+=20;L4Y2+=5; //Linea 4
                 break;
             case -2: 
-                L1X1=200;L1X2=300;L1Y1=130;L1Y2=130; //Linea 1
-                L2X1=200;L2X2=200;L2Y1=130;L2Y2=230; //Linea 2
-                L3X1=200;L3X2=300;L3Y1=230;L3Y2=230; //Linea 3
-                L4X1=300;L4X2=300;L4Y1=130;L4Y2=230; //Linea 4
-                
-                L1X1+=10;L1X2-=15;L1Y1-=30;L1Y2+=30; //Linea 1
-                L2X1+=10;L2X2-=65;L2Y1-=30;L2Y2-=70; //Linea 2
-                L3X1+=10;L3X2-=165;L3Y1+=0;L3Y2-=75; //Linea 3
-                L4X1-=15;L4X2-=90;L4Y1+=30;L4Y2+=0; //Linea 4
+                L1X1+=10;L1X2+=10;L1Y1-=20;L1Y2+=20; //Linea 1
+                L2X1+=10;L2X2-=10;L2Y1-=20;L2Y2-=20; //Linea 2
+                L3X1-=10;L3X2-=10;L3Y1-=20;L3Y2+=20; //Linea 3
+                L4X1+=10;L4X2-=10;L4Y1+=20;L4Y2+=20; //Linea 4 
                 break;
             case -3:  
-                L1X1=200;L1X2=300;L1Y1=130;L1Y2=130; //Linea 1
-                L2X1=200;L2X2=200;L2Y1=130;L2Y2=230; //Linea 2
-                L3X1=200;L3X2=300;L3Y1=230;L3Y2=230; //Linea 3
-                L4X1=300;L4X2=300;L4Y1=130;L4Y2=230; //Linea 4
-                
-                L1X1+=5;L1X2+=20;L1Y1-=20;L1Y2-=15; //Linea 1
-                L2X2-=5;L2Y1-=20;L2Y2-=20; //Linea 2
-                L3X2+=15;L3Y1-=20;L3Y2-=15; //Linea 3
-                L4X1+=20;L4X2+=15;L4Y1-=15;L4Y2-=15; //Linea 4
-                break;
+                L1X1+=10;L1X2+=10;L1Y1-=20;L1Y2+=20; //Linea 1
+                L2X1+=10;L2X2-=10;L2Y1-=20;L2Y2-=20; //Linea 2
+                L3X1-=10;L3X2-=10;L3Y1-=20;L3Y2+=20; //Linea 3
+                L4X1+=10;L4X2-=10;L4Y1+=20;L4Y2+=20; //Linea 4 
             default:
-                Rotacion=0;
-                Number = String.valueOf(Rotacion);
-                lblRot.setText(Number);
-                L1X1=200;L1X2=300;L1Y1=130;L1Y2=130; //Linea 1
-                L2X1=200;L2X2=200;L2Y1=130;L2Y2=230; //Linea 2
-                L3X1=200;L3X2=300;L3Y1=230;L3Y2=230; //Linea 3
-                L4X1=300;L4X2=300;L4Y1=130;L4Y2=230; //Linea 4  
+                Rotacion=1;  
                 break;
             
         }    
-        
-        System.out.println(L1X1);
-        System.out.println(L1X2);
-        System.out.println(L2X1);
-        System.out.println(L2X2);
-        System.out.println(L3X1);
-        System.out.println(L3X2);
-        System.out.println(L4X1);
-        System.out.println(L4X2);
-        System.out.println(L1Y1);
-        System.out.println(L1Y2);
-        System.out.println(L2Y1);
-        System.out.println(L2Y2);
-        System.out.println(L3Y1);
-        System.out.println(L3Y1);
-        System.out.println(L4Y1);
-        System.out.println(L4Y2);
         
         pen.drawLine(L1X1, L1Y1, L1X2, L1Y2); //Lado horizontal arriba
         pen2.drawLine(L2X1, L2Y1, L2X2, L2Y2); //Lado vertical izquierda
@@ -567,7 +527,7 @@ public class Panel extends javax.swing.JFrame {
         Rotacion ++;
         String Number = String.valueOf(Rotacion);
         lblRot.setText(Number);        
-//Para cambiar el label del Rotacion
+        //Para cambiar el label del Rotacion
         if(Rotacion<0){
             Rotacion=0;
             Number = String.valueOf(Rotacion);
@@ -590,48 +550,44 @@ public class Panel extends javax.swing.JFrame {
         pencil.fillRect(0, 0, 500, 500);
         
         //Con esto se rota a la derecha
+               
         
         switch(Rotacion){
-            case 0:
+            case 0: 
                 L1X1=200;L1X2=300;L1Y1=130;L1Y2=130; //Linea 1
                 L2X1=200;L2X2=200;L2Y1=130;L2Y2=230; //Linea 2
                 L3X1=200;L3X2=300;L3Y1=230;L3Y2=230; //Linea 3
-                L4X1=300;L4X2=300;L4Y1=130;L4Y2=230; //Linea 4    
+                L4X1=300;L4X2=300;L4Y1=130;L4Y2=230; //Linea 4       
                 break;
             case 1: 
-                L1X1+=5;L1X2+=20;L1Y1-=20;L1Y2-=15; //Linea 1
-                L2X2-=5;L2Y1-=20;L2Y2-=20; //Linea 2
-                L3X2+=15;L3Y1-=20;L3Y2-=15; //Linea 3
-                L4X1+=20;L4X2+=15;L4Y1-=15;L4Y2-=15; //Linea 4
+                L1X1+=10;L1X2+=10;L1Y1-=20;L1Y2+=20; //Linea 1
+                L2X1+=10;L2X2-=10;L2Y1-=20;L2Y2-=20; //Linea 2
+                L3X1-=10;L3X2-=10;L3Y1-=20;L3Y2+=20; //Linea 3
+                L4X1+=10;L4X2-=10;L4Y1+=20;L4Y2+=20; //Linea 4 
                 break;
-            case 2: 
-                L1X1+=5;L1X2-=35;L1Y1-=10;L1Y2+=45; //Linea 1
-                L2X1+=10;L2X2-=60;L2Y1-=10;L2Y2-=50; //Linea 2
-                L3X1+=10;L3X2-=180;L3Y1+=20;L3Y2-=55; //Linea 3
-                L4X1-=35;L4X2-=105;L4Y1+=45;L4Y2=230; //Linea 4
+            case 2:
+                L1X1+=10;L1X2+=10;L1Y1-=20;L1Y2+=20; //Linea 1
+                L2X1+=10;L2X2-=10;L2Y1-=20;L2Y2-=20; //Linea 2
+                L3X1-=10;L3X2-=10;L3Y1-=20;L3Y2+=20; //Linea 3
+                L4X1+=10;L4X2-=10;L4Y1+=20;L4Y2+=20; //Linea 4 
                 break;
             case 3: 
+                L1X1+=35;L1X2-=0;L1Y1+=25;L1Y2+=20; //Linea 1
+                L2X1+=35;L2X2+=10;L2Y1+=25;L2Y2+=0; //Linea 2
+                L3X1+=10;L3X2-=25;L3Y1-=0;L3Y2+=5; //Linea 3
+                L4X1+=0;L4X2-=25;L4Y1+=20;L4Y2+=5; //Linea 4
+                break;
+            case 4:
                 L1X1=200;L1X2=300;L1Y1=130;L1Y2=130; //Linea 1
                 L2X1=200;L2X2=200;L2Y1=130;L2Y2=230; //Linea 2
                 L3X1=200;L3X2=300;L3Y1=230;L3Y2=230; //Linea 3
                 L4X1=300;L4X2=300;L4Y1=130;L4Y2=230; //Linea 4
                 
-                L1X1+=5;L1X2+=20;L1Y1-=15;L1Y2-=20; //Linea 1
-                L2X2-=5;L2Y1-=15;L2Y2-=15; //Linea 2
-                L3X2+=15;L3Y1-=15;L3Y2-=20; //Linea 3
-                L4X1+=20;L4X2+=15;L4Y1-=15;L4Y2-=15; //Linea 4
+            default: 
+                Rotacion=-1;
                 break;
-            default:
-                Rotacion=0;
-                Number = String.valueOf(Rotacion);
-                lblRot.setText(Number);
-                L1X1=200;L1X2=300;L1Y1=130;L1Y2=130; //Linea 1
-                L2X1=200;L2X2=200;L2Y1=130;L2Y2=230; //Linea 2
-                L3X1=200;L3X2=300;L3Y1=230;L3Y2=230; //Linea 3
-                L4X1=300;L4X2=300;L4Y1=130;L4Y2=230; //Linea 4  
-                break;
-            
         }
+        
         
 
         pen.drawLine(L1X1, L1Y1, L1X2, L1Y2); //Lado horizontal arriba
